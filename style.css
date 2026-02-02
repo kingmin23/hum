@@ -1,0 +1,283 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+#clock {
+  font-size: 46px;
+  line-height: 1.2;
+}
+
+#date {
+  font-size: 13px;
+  color: #666;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  background: #fafafa;
+  color: #333;
+  font-family: "Pretendard", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.brand:hover {
+  opacity: 0.8;
+}
+
+nav {
+  margin-left: 2rem;
+}
+
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #555;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+.right-menu {
+  margin-left: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.cell {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.section {
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.small {
+  font-family: "Pretendard", sans-serif;
+  font-size: 1rem;
+  color: #555; /* 글자색 */
+  text-decoration: none; /* 밑줄 제거 */
+  font-weight: 500; /* 굵기 조절 */
+  transition: color 0.3s ease; /* 부드럽게 색 전환 */
+}
+
+.small:hover {
+  color: #000; /* 마우스 올렸을 때 색상 */
+}
+
+/* 글쓰기 인터페이스 */
+#postInput {
+  width: 100%;
+  height: 150px;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-family: inherit;
+}
+
+/*시계*/
+#time.cell {
+  font-size: 35px; /* 글씨 크기 조정 */
+  font-weight: 700; /* 굵기 (bold보다 강한 느낌) */
+  color: #000000; /* 색상 (원하면 바꿔도 돼) */
+  font-family: "Poppins", sans-serif; /* 예쁜 폰트 적용 가능 */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* 은은한 빛 효과 */
+}
+
+button {
+  margin-top: 0.5rem;
+  background: #f7f7f7;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffffff;
+}
+
+.section {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff;
+  color: #333;
+}
+
+.section.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ✅ 음악 플레이어 스타일 (얇고 가로로 길게, 중앙 정렬) */
+.music-player {
+  width: 70%; /* 가로로 길게 */
+  max-width: 3000px;
+  margin: 30px auto; /* 가운데 정렬 */
+  padding: 10px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.music-player h2 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+#track-title {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  transition: 0.2s;
+}
+
+.controls button:hover {
+  transform: scale(1.15);
+}
+
+.section {
+  display: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2rem;
+}
+
+/* ✅ 버튼을 눌러 활성화된 section만 보이게 */
+.section.active {
+  display: block;
+}
+
+/* ✅ 글쓰기 칸 레이아웃 조정 */
+#postInput {
+  width: 90%;
+  margin-left: 1rem; /* 왼쪽 여백 */
+  height: 140px;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  resize: none;
+}
+
+/* 달력 전체 */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0; /* 칸 사이 간격 없음 */
+  width: 100%;
+  max-width: 330px;
+  margin: 0 auto;
+}
+
+.calendar div:hover {
+  filter: brightness(1.3);
+  transition: 0.15s;
+}
+
+/* 날짜 칸 */
+.calendar div {
+  aspect-ratio: 1/1; /* 정사각형 */
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* 모달 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.color-bar {
+  width: 200px;
+  height: 25px;
+  border-radius: 8px;
+  margin: 15px auto;
+  background: linear-gradient(
+    to right,
+    hsl(0, 70%, 95%),
+    hsl(0, 70%, 80%),
+    hsl(0, 70%, 65%),
+    hsl(0, 70%, 50%),
+    hsl(0, 70%, 40%)
+  );
+  cursor: pointer;
+  position: relative;
+}
+
+/* 현재 선택한 위치에 표시되는 포인터 */
+.color-bar::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 6px;
+  height: 31px;
+  background: black;
+  border-radius: 3px;
+  left: var(--pointer, 50%);
+  transform: translateX(-50%);
+}

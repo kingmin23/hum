@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FLOWER — minimal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand" onclick="location.reload()">TOMI — FLOWER</div>
+      <nav>
+        <a href="#" onclick="showSection('profile')">PROFILE</a>
+        <a href="#" onclick="showSection('notice')">NOTICE</a>
+        <a href="#" onclick="showSection('gallery')">LUCK</a>
+        <a href="#" onclick="showSection('music')">MUSIC</a>
+        <a href="#" onclick="showSection('diary')">DIARY</a>
+        <a href="#" onclick="showSection('study')">STUDY</a>
+      </nav>
+      <div class="right-menu">
+        <a class="small" href="https://www.instagram.com/k.m2_m/">mi.6-1j8</a>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="cell" id="time">
+        <div id="clock"></div>
+        <div id="date"></div>
+      </section>
+      <section class="cell" id="banner"><img src="C:\Users\Gram\OneDrive\바탕 화면\teras\image.png" border = "0" width="225" height="250"></img></section>
+      <section class="cell" id="quote"></section>
+      <section class="cell" id="shop">
+        <script
+          type="module"
+          src="https://unpkg.com/@splinetool/viewer@1.11.2/build/spline-viewer.js"
+        ></script>
+        <spline-viewer
+          url="https://prod.spline.design/bkrd3njBy0J0HnMA/scene.splinecode"
+          style="width: 100%; height: 100%; border: none"
+        >
+        </spline-viewer>
+      </section>
+      <section class="cell" id="memo">.𖥔 ݁ ˖𓂃.☘︎ ݁˖</section>
+      <section class="cell" id="gallery">☆࿐ཽ༵༆༒</section>
+      <section class="cell" id="gallery">✧₊˚˚‧꒰ა ʚïɞ ໒꒱ᗢ₊✧₊˚</section>
+      <section class="cell" id="gallery">⛧☾༺ ⛧ ༻☽⛧</section>
+    </main>
+
+    <!-- 글 작성/게시판 인터페이스 (클릭 시 보이게 할 부분) -->
+    <section id="notice" class="section hidden">
+      <h2>글 작성</h2>
+      <textarea id="postInput" placeholder="글을 입력하세요..."></textarea>
+      <button onclick="savePost()">저장</button>
+
+      <h2>게시판</h2>
+      <ul id="postList"></ul>
+    </section>
+
+    <!--음악 듣기-->
+    <section id="music" class="section hidden">
+      <div class="music-player">
+        <h2>♪ﾟ･+.*ﾟMusic Playing +♪.･.｡*</h2>
+        <h3>02:14 ─────✦── 03:14</h3>
+        <audio
+          id="player"
+          src="C:\Users\Gram\OneDrive\바탕 화면\404 Not Found - 긴.mp3"
+          controls
+        ></audio>
+      </div>
+    </section>
+
+    <section id="diary" class="section hidden">
+      <h2>MOOD DIARY — 12월</h2>
+
+      <div id="calendar" class="calendar"></div>
+
+      <!-- 색 선택 모달 -->
+      <div id="colorModal" class="modal hidden">
+        <div class="modal-content">
+          <h3>오늘 기분</h3>
+
+          <div class="color-bar" id="colorBar"></div>
+          <button id="applyColor">확인</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
